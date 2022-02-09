@@ -2,18 +2,19 @@
 import json
 import requests
 import time
-import os
-
+import schedule
 
 
 class User:
-    def __init__(self, username, password):
+    def __init__(self, username, password, token):
         self.username = username
         self.password = password
+        self.token = token
 
-def pushplus(content):
+
+def pushplus(content, token):
     # 在网站中查询你的你的token
-    token = os.environ.get('token')  # 在pushpush网站中可以找到
+    token = token  # 在pushpush网站中可以找到
     title = '健康打卡'  # 改成你要的标题内容
     content = content  # 改成你要的正文内容
     url = 'http://www.pushplus.plus/send'
@@ -27,11 +28,13 @@ def pushplus(content):
     headers = {'Content-Type': 'application/json'}
     requests.post(url, data=body, headers=headers)
 
+
 def report(user):
     data = {
         'username': user.username,
         'password': user.password,
     }
+    token = user.token
     url = "https://app.buaa.edu.cn/uc/wap/login/check"
     url_info = "https://app.buaa.edu.cn/buaaxsncov/wap/default/get-info"
     url_save = "https://app.buaa.edu.cn/buaaxsncov/wap/default/save"
@@ -43,7 +46,7 @@ def report(user):
         re = session.post(url=url, data=data)
         end = time.time()
         if (end - start) > 600:
-            pushplus("打卡失败，请手动进行打卡")
+            pushplus("打卡失败，请手动进行打卡", token)
             print("打卡失败，请手动进行打卡")
             return 0
     re = session.get(url=url_info)
@@ -73,16 +76,25 @@ def report(user):
         re = session.post(url=url_save, data=info)
         end = time.time()
         if (end - start) > 600:
-            pushplus("打卡失败，请手动进行打卡")
+            pushplus("打卡失败，请手动进行打卡", token)
             print("打卡失败，请手动进行打卡")
             return 0
 
-    pushplus("恭喜你打卡成功！")
+    pushplus("恭喜你打卡成功！", token)
     print("恭喜你打卡成功！")
 
-# 你的账号
-name="15111122"
-# 你的密码
-key="15111122key"
-user = User(name, key)
-report(user)
+
+if __name__ == '__main__':
+    ############ 你的账号 ############
+    name = "by2003183"
+    ############ 你的密码 ############
+    key = "zzh2003183"
+    ############ 你的token指令 ############
+    token = '****'
+
+    # 打卡函数
+    user = User(name, key, token)
+    schedule.every().day.at("17:01").do(report, user)
+    # schedule.every().minutes.do(report, user)
+    while (1):
+        schedule.run_pending()
