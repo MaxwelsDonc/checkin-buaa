@@ -11,7 +11,7 @@
 <img width="542" alt="image" src="https://user-images.githubusercontent.com/99311937/153231166-be32ab3d-186a-4c82-aff7-e26d991bc6e6.png">
 
 ### 推送相关的配置
-进入网址：https://www.pushplus.plus，进行登陆和绑定，网站会给你一个token号
+进入网址：https://www.pushplus.plus 进行登陆和绑定，网站会给你一个token号
 
 <img width="601" alt="image" src="https://user-images.githubusercontent.com/99311937/153231909-066d7b66-3e63-4e0f-b9dc-4e37760f0f91.png">
 
