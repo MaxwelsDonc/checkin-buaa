@@ -1,4 +1,8 @@
 # -*- coding: utf8 -*-
+'''
+本代码为服务器专用的代码，可以直接进行运行.
+2022.03.16: 更新执行时间，防止引发攻击
+'''
 import json
 import requests
 import time
@@ -82,19 +86,3 @@ def report(user):
 
     pushplus("恭喜你打卡成功！", token)
     print("恭喜你打卡成功！")
-
-
-if __name__ == '__main__':
-    ############ 你的账号 ############
-    name = "****"
-    ############ 你的密码 ############
-    key = "****"
-    ############ 你的token指令 ############
-    token = '****'
-
-    # 打卡函数
-    user = User(name, key, token)
-    schedule.every().day.at("17:01").do(report, user)
-    # schedule.every().minutes.do(report, user)
-    while (1):
-        schedule.run_pending()
