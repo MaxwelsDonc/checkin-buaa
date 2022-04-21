@@ -13,7 +13,7 @@ if __name__ == '__main__':
 
     # 打卡函数
     user = User(name, key, token)
-    schedule.every().day.at("17:01").do(report, user)
+    schedule.every().day.at("18:01").do(report, user)
     # schedule.every().minutes.do(report, user)
     while (1):
         schedule.run_pending()
