@@ -4,7 +4,7 @@
 
 北京航空航天大学 \| 北航 \| BUAA \| 健康情况自动填报 \| 自动打卡
 
-\\ 
+
 ![forks](https://img.shields.io/github/forks/MaxwelsDonc/checkin-buaa?style=flat-square) ![github](https://img.shields.io/github/watchers/MaxwelsDonc/checkin-buaa?style=flat-square) ![stars](https://img.shields.io/github/stars/MaxwelsDonc/checkin-buaa?style=flat-square)
 
 ## 特性优点
