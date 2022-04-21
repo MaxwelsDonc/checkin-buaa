@@ -16,9 +16,8 @@
 
 ---
 
-#### 服务器直接部署运行
-- 下载release包进行解压, 然后在服务器上配置相关的python环境:
-    > pip install -r requirements.txt
+### 推送相关的配置
+进入网址：https://www.pushplus.plus 进行登陆和绑定，网站会给你一个token号
 
 - 之后进行主函数配置[main.py](/sever-deloy/main.py)
   目前主函数的配置包含三个变量: name, key, token.
