@@ -3,7 +3,9 @@
 *请大家支持学校的防疫工作，不要滥用自动打卡程序。***
 
 北京航空航天大学 \| 北航 \| BUAA \| 健康情况自动填报 \| 自动打卡
+
 ![forks](https://img.shields.io/github/forks/MaxwelsDonc/checkin-buaa?style=flat-square) ![github](https://img.shields.io/github/watchers/MaxwelsDonc/checkin-buaa?style=flat-square) ![stars](https://img.shields.io/github/stars/MaxwelsDonc/checkin-buaa?style=flat-square)
+
 ## 特性优点
 - 支持多平台部署
 - 支持相关推送服务
